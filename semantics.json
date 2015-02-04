@@ -1,0 +1,39 @@
+[
+  {
+    "name": "taskDescription",
+    "label": "Descriptive of inputfield",
+    "type": "text",
+    "widget": "html",
+    "description": "A descriptive text about what the user should input.",
+    "enterMode": "p",
+    "tags": [
+      "strong",
+      "em",
+      "u",
+      "a",
+      "ul",
+      "ol",
+      "h2",
+      "h3",
+      "hr"
+    ],
+    "optional": true
+  },
+  {
+    "name": "placeholderText",
+    "label": "Placeholder text",
+    "type": "text",
+    "description": "A placeholder text for the user.",
+    "optional": true
+  },
+  {
+    "name": "inputFieldSize",
+    "label": "Input field size",
+    "type": "number",
+    "description": "The size of the input field in amount of lines it will cover.",
+    "min": 1,
+    "max": 100,
+    "step": 1,
+    "default": 1
+  }
+]
