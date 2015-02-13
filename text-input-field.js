@@ -42,11 +42,20 @@ H5P.TextInputField = (function ($) {
       'html': self.params.taskDescription
     }).appendTo(self.$inner);
 
-    $('<textarea>', {
+    this.$inputField = $('<textarea>', {
       'class': INPUT_FIELD,
       'rows': parseInt(self.params.inputFieldSize),
       'placeholder': self.params.placeholderText
     }).appendTo(self.$inner);
+  };
+
+
+  /**
+   * Retrieves the text input field
+   * @returns {String} * Returns input field
+   */
+  TextInputField.prototype.getInput = function () {
+    return this.$inputField.val();
   };
 
   return TextInputField;
