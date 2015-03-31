@@ -44,7 +44,7 @@ H5P.TextInputField = (function ($) {
 
     this.$inputField = $('<textarea>', {
       'class': INPUT_FIELD,
-      'rows': parseInt(self.params.inputFieldSize),
+      'rows': parseInt(self.params.inputFieldSize, 10),
       'placeholder': self.params.placeholderText
     }).appendTo(self.$inner);
   };
@@ -59,4 +59,4 @@ H5P.TextInputField = (function ($) {
   };
 
   return TextInputField;
-})(H5P.jQuery);
+}(H5P.jQuery));

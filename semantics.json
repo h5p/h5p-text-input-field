@@ -5,6 +5,7 @@
     "type": "text",
     "widget": "html",
     "description": "A descriptive text about what the user should input.",
+    "enterMode": "div",
     "tags": [
       "strong",
       "em",
