@@ -7,8 +7,13 @@
   background-color: #F5F5F5;
 }
 
+.h5p-text-input-field .h5p-text-input-field-textfield:focus {
+  background-color: #fff;
+}
+
 /* Reduce bottom and top margin of children */
 .h5p-text-input-field .h5p-text-input-field-label > * {
   margin-top: 1em;
   margin-bottom: 0.2em;
 }
+
