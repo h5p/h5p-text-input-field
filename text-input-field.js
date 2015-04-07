@@ -46,7 +46,7 @@ H5P.TextInputField = (function ($) {
       'class': INPUT_FIELD,
       'rows': parseInt(self.params.inputFieldSize, 10),
       'placeholder': self.params.placeholderText,
-      'tabindex': '1'
+      'tabindex': '0'
     }).appendTo(self.$inner);
   };
 
