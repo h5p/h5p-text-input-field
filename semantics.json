@@ -46,5 +46,13 @@
       }
     ],
     "default": "1"
+  },
+  {
+    "name": "requiredField",
+    "label": "Required field",
+    "type": "boolean",
+    "default": false,
+    "optional": true,
+    "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
   }
 ]

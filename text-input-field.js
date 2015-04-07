@@ -24,7 +24,8 @@ H5P.TextInputField = (function ($) {
     this.params = $.extend({}, {
       taskDescription: 'Input field',
       placeholderText: '',
-      inputFieldSize: '1'
+      inputFieldSize: '1',
+      requiredField: false
     }, params);
   }
 
@@ -48,6 +49,22 @@ H5P.TextInputField = (function ($) {
       'placeholder': self.params.placeholderText,
       'tabindex': '0'
     }).appendTo(self.$inner);
+  };
+
+  /**
+   * Returns true if input field is not required or non-empty
+   * @returns {boolean} True if input field is filled or not required
+   */
+  TextInputField.prototype.isRequiredInputFilled = function () {
+    if (!this.params.requiredField) {
+      return true;
+    }
+
+    if (this.params.requiredField && this.$inputField.val().length) {
+      return true;
+    }
+
+    return false;
   };
 
 
