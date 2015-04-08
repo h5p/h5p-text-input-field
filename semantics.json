@@ -1,10 +1,10 @@
 [
   {
     "name": "taskDescription",
-    "label": "Descriptive of inputfield",
+    "label": "Description of inputfield",
     "type": "text",
     "widget": "html",
-    "description": "A descriptive text about what the user should input.",
+    "description": "Description of what the user should input.",
     "enterMode": "div",
     "tags": [
       "strong",
