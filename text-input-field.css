@@ -1,10 +1,12 @@
 .h5p-text-input-field .h5p-text-input-field-textfield {
   padding: 0.25em 0.4em;
-  width: 100%;
+  width: calc(100% - 0.8em);
   resize: none;
   border: 1px solid #C7C7C7;
   border-top: 2px solid #C7C7C7;
   background-color: #F5F5F5;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
 }
 
 .h5p-text-input-field .h5p-text-input-field-textfield:focus {
