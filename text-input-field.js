@@ -38,7 +38,7 @@ H5P.TextInputField = (function ($) {
     var self = this;
     this.$inner = $container.addClass(MAIN_CONTAINER);
 
-    $('<div>', {
+    this.$taskDescription = $('<div>', {
       'class': INPUT_LABEL,
       'html': self.params.taskDescription
     }).appendTo(self.$inner);
@@ -70,10 +70,11 @@ H5P.TextInputField = (function ($) {
 
   /**
    * Retrieves the text input field
-   * @returns {String} * Returns input field
+   * @returns {description:string, value:string} Returns input field
    */
   TextInputField.prototype.getInput = function () {
-    return this.$inputField.val();
+    // Remove trailing newlines
+    return {description: this.params.taskDescription.replace(/^\s+|\s+$/g, ''), value: this.$inputField.val()};
   };
 
   return TextInputField;
