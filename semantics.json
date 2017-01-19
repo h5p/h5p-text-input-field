@@ -4,6 +4,7 @@
     "label": "Description of inputfield",
     "type": "text",
     "widget": "html",
+    "importance": "high",
     "description": "Description of what the user should input.",
     "enterMode": "div",
     "tags": [
@@ -24,12 +25,14 @@
     "label": "Placeholder text",
     "type": "text",
     "description": "A placeholder text for the user.",
+    "importance": "low",
     "optional": true
   },
   {
     "name": "inputFieldSize",
     "label": "Input field size",
     "type": "select",
+    "importance": "low",
     "description": "The size of the input field in amount of lines it will cover.",
     "options": [
       {
@@ -51,6 +54,7 @@
     "name": "requiredField",
     "label": "Required field",
     "type": "boolean",
+    "importance": "low",
     "default": false,
     "optional": true,
     "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
