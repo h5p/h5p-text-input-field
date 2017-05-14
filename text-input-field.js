@@ -76,7 +76,8 @@ H5P.TextInputField = (function ($) {
     // Remove trailing newlines
     return {
       description: this.params.taskDescription.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""),
-      value: this.$inputField.val()
+      value: this.$inputField.val(),
+      elementId: this.params.elementId
     };
   };
 
