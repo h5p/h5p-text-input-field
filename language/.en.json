@@ -21,8 +21,7 @@
         {
           "label": "10 lines"
         }
-      ],
-      "default": "1"
+      ]
     },
     {
       "label": "Required field",
