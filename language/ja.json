@@ -26,7 +26,7 @@
     },
     {
       "label":"必須フィールド",
-      "description":"Check to make this field required, the user must answer all required fields to be able to export a document."
+      "description":"\nこのフィールドを必須にするのをチェック。文書をエクスポートするためにすべての必須フィールドにユーザーが回答する必要があります。"
     }
   ]
 }
