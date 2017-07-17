@@ -1,7 +1,7 @@
 {
   "semantics":[
     {
-      "label":"Description of inputfield",
+      "label":"入力フィールドの説明",
       "description":"Description of what the user should input."
     },
     {
@@ -21,7 +21,8 @@
         {
           "label":"10 lines"
         }
-      ]
+      ],
+      "default":"1"
     },
     {
       "label":"Required field",
