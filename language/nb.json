@@ -21,7 +21,8 @@
         {
           "label":"10 linjer"
         }
-      ]
+      ],
+      "default":"1"
     },
     {
       "label":"Obligatorisk felt",
