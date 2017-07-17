@@ -2,30 +2,30 @@
   "semantics":[
     {
       "label":"入力フィールドの説明",
-      "description":"Description of what the user should input."
+      "description":"ユーザーが入力すべき内容の説明。"
     },
     {
-      "label":"Placeholder text",
-      "description":"A placeholder text for the user."
+      "label":"プレースホルダーテキスト",
+      "description":"ユーザーのためのプレースホルダーテキスト。"
     },
     {
-      "label":"Input field size",
-      "description":"The size of the input field in amount of lines it will cover.",
+      "label":"入力フィールドのサイズ",
+      "description":"入力フィールドのサイズ（行数）",
       "options":[
         {
-          "label":"1 line"
+          "label":"1行"
         },
         {
-          "label":"3 lines"
+          "label":"3行"
         },
         {
-          "label":"10 lines"
+          "label":"10行"
         }
       ],
       "default":"1"
     },
     {
-      "label":"Required field",
+      "label":"必須フィールド",
       "description":"Check to make this field required, the user must answer all required fields to be able to export a document."
     }
   ]
