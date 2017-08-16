@@ -10,7 +10,7 @@
     },
     {
       "label":"Größe des Eingabefelds",
-      "description":"Die Größe des Eingabefelds in Form der Zeilenanzahl",
+      "description":"Die Größe des Eingabefelds als Zahl der Zeilen.",
       "options":[
         {
           "label":"1 Zeile"
