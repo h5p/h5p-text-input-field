@@ -9,7 +9,7 @@ H5P.TextInputField = (function ($) {
   var MAIN_CONTAINER = 'h5p-text-input-field';
   var INPUT_LABEL = 'h5p-text-input-field-label';
   var INPUT_FIELD = 'h5p-text-input-field-textfield';
-  var SPACE_MESSAGE = 'h5p-text-input-field-message';
+  var CHAR_MESSAGE = 'h5p-text-input-field-message';
 
   /**
    * Initialize module.
@@ -29,7 +29,10 @@ H5P.TextInputField = (function ($) {
       requiredField: false
     }, params);
 
-    this.max = (typeof this.params.maximumLength === 'undefined') ? '' : parseInt(this.params.maximumLength, 10);
+    // Set the maximum length for the textarea
+    this.maxTextLength = (typeof this.params.maximumLength === 'undefined') ?
+      '' :
+      parseInt(this.params.maximumLength, 10);
   }
 
   /**
@@ -49,19 +52,19 @@ H5P.TextInputField = (function ($) {
     this.$inputField = $('<textarea>', {
       'class': INPUT_FIELD,
       'rows': parseInt(self.params.inputFieldSize, 10),
-      'maxlength': self.max,
+      'maxlength': self.maxTextLength,
       'placeholder': self.params.placeholderText,
       'tabindex': '0'
     }).appendTo(self.$inner);
 
-    if (self.max !== '') {
+    if (self.maxTextLength !== '') {
       this.$spaceMessage = $('<div>', {
-        'class': SPACE_MESSAGE
+        'class': CHAR_MESSAGE
       }).appendTo(self.$inner);
 
       this.$inputField.on('change keyup paste', function() {
         // TODO: Localization
-        self.$spaceMessage.html('Remaining characters: ' + self.computeRemainingChars());
+        self.$spaceMessage.html('Remaining characters:' + ' ' + self.computeRemainingChars());
       });
 
       this.$inputField.trigger('change');
@@ -85,7 +88,6 @@ H5P.TextInputField = (function ($) {
     return false;
   };
 
-
   /**
    * Retrieves the text input field
    * @returns {description:string, value:string} Returns input field
@@ -99,11 +101,11 @@ H5P.TextInputField = (function ($) {
   };
 
   /**
-   * Compute the remaining characters
-   * @returns {description:string, value:string} Returns input field
+   * Compute the remaining number of characters
+   * @returns {number} Returns number of characters left
    */
   TextInputField.prototype.computeRemainingChars = function() {
-    return this.max - this.$inputField.val().length;
+    return this.maxTextLength - this.$inputField.val().length;
   };
 
   return TextInputField;
