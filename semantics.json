@@ -29,6 +29,15 @@
     "optional": true
   },
   {
+    "name": "maximumLength",
+    "label": "Maximum text length",
+    "type": "number",
+    "description": "Maximum number of characters for the text.",
+    "importance": "low",
+    "optional": true,
+    "min": "0"
+  },
+  {
     "name": "inputFieldSize",
     "label": "Input field size",
     "type": "select",
