@@ -9,6 +9,10 @@
       "description": "Her kan du oppgi en fylltekst som skal vises når inntastingsfeltet er tomt."
     },
     {
+      "label": "Maximum text length",
+      "description": "Maximum number of characters for the text."
+    },
+    {
       "label": "Størrelse på inntastingsfelt",
       "description": "Størrelse på inntastingsfelt oppgitt i antall linjer inntastingsfeltet vil romme.",
       "options": [
