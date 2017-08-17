@@ -26,6 +26,11 @@
     {
       "label": "Obligatorisk felt",
       "description": "Skru på for å gjøre dette inntastingsfeltet obligatorisk. Det vil føre til at man ikke kan eksportere et dokument før dette inntastingsfeltet er fylt ut."
+    },
+    {
+      "label": "Remaining characters",
+      "default": "Remaining characters: @chars",
+      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
     }
   ]
 }

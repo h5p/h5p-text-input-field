@@ -27,6 +27,11 @@
     {
       "label": "Required field",
       "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+    },
+    {
+      "label": "Remaining characters",
+      "default": "Remaining characters: @chars",
+      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
     }
   ]
 }
