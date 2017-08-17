@@ -63,8 +63,8 @@ H5P.TextInputField = (function ($) {
       }).appendTo(self.$inner);
 
       this.$inputField.on('change keyup paste', function() {
-        // TODO: Localization
-        self.$spaceMessage.html('Remaining characters:' + ' ' + self.computeRemainingChars());
+        self.$spaceMessage.html(
+          self.params.remainingChars.replace(/@chars/g, self.computeRemainingChars()));
       });
 
       this.$inputField.trigger('change');
