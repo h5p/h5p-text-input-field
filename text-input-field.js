@@ -9,6 +9,7 @@ H5P.TextInputField = (function ($) {
   var MAIN_CONTAINER = 'h5p-text-input-field';
   var INPUT_LABEL = 'h5p-text-input-field-label';
   var INPUT_FIELD = 'h5p-text-input-field-textfield';
+  var CHAR_MESSAGE = 'h5p-text-input-field-message';
 
   /**
    * Initialize module.
@@ -27,6 +28,11 @@ H5P.TextInputField = (function ($) {
       inputFieldSize: '1',
       requiredField: false
     }, params);
+
+    // Set the maximum length for the textarea
+    this.maxTextLength = (typeof this.params.maximumLength === 'undefined') ?
+      '' :
+      parseInt(this.params.maximumLength, 10);
   }
 
   /**
@@ -46,9 +52,23 @@ H5P.TextInputField = (function ($) {
     this.$inputField = $('<textarea>', {
       'class': INPUT_FIELD,
       'rows': parseInt(self.params.inputFieldSize, 10),
+      'maxlength': self.maxTextLength,
       'placeholder': self.params.placeholderText,
       'tabindex': '0'
     }).appendTo(self.$inner);
+
+    if (self.maxTextLength !== '') {
+      this.$spaceMessage = $('<div>', {
+        'class': CHAR_MESSAGE
+      }).appendTo(self.$inner);
+
+      this.$inputField.on('change keyup paste', function() {
+        self.$spaceMessage.html(
+          self.params.remainingChars.replace(/@chars/g, self.computeRemainingChars()));
+        });
+
+        this.$inputField.trigger('change');
+      }
   };
 
   /**
@@ -67,7 +87,6 @@ H5P.TextInputField = (function ($) {
     return false;
   };
 
-
   /**
    * Retrieves the text input field
    * @returns {description:string, value:string} Returns input field
@@ -78,6 +97,14 @@ H5P.TextInputField = (function ($) {
       description: this.params.taskDescription.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""),
       value: this.$inputField.val()
     };
+  };
+
+  /**
+   * Compute the remaining number of characters
+   * @returns {number} Returns number of characters left
+   */
+  TextInputField.prototype.computeRemainingChars = function() {
+    return this.maxTextLength - this.$inputField.val().length;
   };
 
   return TextInputField;
