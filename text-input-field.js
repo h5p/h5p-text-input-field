@@ -16,9 +16,10 @@ H5P.TextInputField = (function ($) {
    * @param {Number} id Content identification
    * @returns {Object} TextInputField TextInputField instance
    */
-  function TextInputField(params, id) {
+  function TextInputField(params, id, contentData) {
     this.$ = $(this);
     this.id = id;
+    this.contentData = contentData;
 
     // Set default behavior.
     this.params = $.extend({}, {
@@ -27,6 +28,11 @@ H5P.TextInputField = (function ($) {
       inputFieldSize: '1',
       requiredField: false
     }, params);
+
+    // Get previous state
+    if (this.contentData !== undefined && this.contentData.previousState !== undefined) {
+      this.previousState = this.contentData.previousState;
+    }
   }
 
   /**
@@ -49,6 +55,9 @@ H5P.TextInputField = (function ($) {
       'placeholder': self.params.placeholderText,
       'tabindex': '0'
     }).appendTo(self.$inner);
+
+    // set state from previous one
+    this.setState(this.previousState);
   };
 
   /**
@@ -67,7 +76,6 @@ H5P.TextInputField = (function ($) {
     return false;
   };
 
-
   /**
    * Retrieves the text input field
    * @returns {description:string, value:string} Returns input field
@@ -78,6 +86,31 @@ H5P.TextInputField = (function ($) {
       description: this.params.taskDescription.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""),
       value: this.$inputField.val()
     };
+  };
+  /**
+   * Get current state for H5P.Question.
+   * @return {object} Current state.
+   */
+  TextInputField.prototype.getCurrentState = function () {
+    // We could have just uses a string, but you never know when you need to store more parameters
+    return {
+      'inputField': this.$inputField.val()
+    };
+  };
+
+  /**
+   * Set state from previous state.
+   * @param {object} previousState - PreviousState.
+   */
+  TextInputField.prototype.setState = function (previousState) {
+    var self = this;
+
+    if (previousState === undefined) {
+      return;
+    }
+    if (typeof previousState === 'object' && !Array.isArray(previousState)) {
+      self.$inputField.html(previousState.inputField || '');
+    }
   };
 
   return TextInputField;
