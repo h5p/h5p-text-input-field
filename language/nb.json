@@ -21,11 +21,17 @@
         {
           "label": "10 linjer"
         }
-      ]
+      ],
+      "default": "1"
     },
     {
       "label": "Obligatorisk felt",
       "description": "Skru på for å gjøre dette inntastingsfeltet obligatorisk. Det vil føre til at man ikke kan eksportere et dokument før dette inntastingsfeltet er fylt ut."
+    },
+    {
+      "label": "Save message",
+      "description": "Message indicating that the text has been saved",
+      "default": "saved"
     }
   ]
 }

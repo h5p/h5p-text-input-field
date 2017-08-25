@@ -9,6 +9,7 @@ H5P.TextInputField = (function ($) {
   var MAIN_CONTAINER = 'h5p-text-input-field';
   var INPUT_LABEL = 'h5p-text-input-field-label';
   var INPUT_FIELD = 'h5p-text-input-field-textfield';
+  var SAVE_MESSAGE = 'h5p-text-input-field-message-save';
 
   /**
    * Initialize module.
@@ -58,6 +59,14 @@ H5P.TextInputField = (function ($) {
 
     // set state from previous one
     this.setState(this.previousState);
+
+    this.$inputField.on('change keyup paste', function() {
+      self.updateMessageSaved('');
+    });
+
+    this.$saveMessage = $('<div>', {
+      'class': SAVE_MESSAGE
+    }).appendTo(self.$inner);
   };
 
   /**
@@ -92,6 +101,8 @@ H5P.TextInputField = (function ($) {
    * @return {object} Current state.
    */
   TextInputField.prototype.getCurrentState = function () {
+    this.updateMessageSaved(this.params.messageSave);
+
     // We could have just uses a string, but you never know when you need to store more parameters
     return {
       'inputField': this.$inputField.val()
@@ -111,6 +122,20 @@ H5P.TextInputField = (function ($) {
     if (typeof previousState === 'object' && !Array.isArray(previousState)) {
       self.$inputField.html(previousState.inputField || '');
     }
+  };
+  /**
+   * Update the indicator message for saved text
+   * @param {string} saved - Message to indicate the text was saved
+   */
+  TextInputField.prototype.updateMessageSaved = function (saved) {
+    // Add/remove blending effect
+    if (saved === undefined || saved === '') {
+      this.$saveMessage.removeClass('h5p-text-input-field-message-save-animation');
+    }
+    else {
+      this.$saveMessage.addClass('h5p-text-input-field-message-save-animation');
+    }
+    this.$saveMessage.html(saved);
   };
 
   return TextInputField;

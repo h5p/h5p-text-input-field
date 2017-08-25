@@ -58,5 +58,14 @@
     "default": false,
     "optional": true,
     "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+  },
+  {
+      "name": "messageSave",
+      "type": "text",
+      "label": "Save message",
+      "description": "Message indicating that the text has been saved",
+      "importance": "low",
+      "common": true,
+      "default": "saved"
   }
 ]

@@ -21,11 +21,17 @@
         {
           "label": "10 Zeilen"
         }
-      ]
+      ],
+      "default": "1"
     },
     {
       "label": "Erforlderliches Feld",
       "description": "Anwählen, um Eingaben erforderlich zu machen. Der Nutzer muss alle erforderlichen Felder bearbeiten, um ein Dokument exportieren zu können."
+    },
+    {
+      "label": "Speichernachricht",
+      "description": "Hinweistext, der anzeigt, dass der Text gespeichert wurde",
+      "default": "gespeichert"
     }
   ]
 }

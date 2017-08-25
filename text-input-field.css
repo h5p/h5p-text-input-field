@@ -1,3 +1,8 @@
+@keyframes h5p-text-input-field-message-save-opacity {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 .h5p-text-input-field .h5p-text-input-field-textfield {
   padding: 0.25em 0.4em;
   width: calc(100% - 0.8em);
@@ -18,3 +23,12 @@
   margin-bottom: 0.2em;
 }
 
+.h5p-text-input-field .h5p-text-input-field-message-save {
+  font-size: 0.8em;
+  float: right;
+}
+
+.h5p-text-input-field .h5p-text-input-field-message-save-animation {
+  animation-name: h5p-text-input-field-message-save-opacity;
+  animation-duration: 1s;
+}
