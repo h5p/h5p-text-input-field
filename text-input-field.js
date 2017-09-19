@@ -10,6 +10,8 @@ H5P.TextInputField = (function ($) {
   var INPUT_LABEL = 'h5p-text-input-field-label';
   var INPUT_FIELD = 'h5p-text-input-field-textfield';
 
+  var ariaId = 0;
+
   /**
    * Initialize module.
    * @param {Object} params Behavior settings
@@ -27,6 +29,8 @@ H5P.TextInputField = (function ($) {
       inputFieldSize: '1',
       requiredField: false
     }, params);
+
+    ariaId++;
   }
 
   /**
@@ -38,7 +42,10 @@ H5P.TextInputField = (function ($) {
     var self = this;
     this.$inner = $container.addClass(MAIN_CONTAINER);
 
+
+
     this.$taskDescription = $('<div>', {
+      id: ariaId,
       'class': INPUT_LABEL,
       'html': self.params.taskDescription
     }).appendTo(self.$inner);
@@ -47,7 +54,9 @@ H5P.TextInputField = (function ($) {
       'class': INPUT_FIELD,
       'rows': parseInt(self.params.inputFieldSize, 10),
       'placeholder': self.params.placeholderText,
-      'tabindex': '0'
+      'tabindex': '0',
+      'aria-required': this.params.requiredField,
+      'aria-labelledby': ariaId
     }).appendTo(self.$inner);
   };
 
