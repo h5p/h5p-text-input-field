@@ -42,11 +42,9 @@ H5P.TextInputField = (function ($) {
     var self = this;
     this.$inner = $container.addClass(MAIN_CONTAINER);
 
-
-
     this.$taskDescription = $('<div>', {
       id: ariaId,
-      'class': INPUT_LABEL,
+      'class': INPUT_LABEL + (this.params.requiredField ? ' required' : ''),
       'html': self.params.taskDescription
     }).appendTo(self.$inner);
 
