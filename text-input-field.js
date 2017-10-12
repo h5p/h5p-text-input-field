@@ -11,6 +11,8 @@ H5P.TextInputField = (function ($) {
   var INPUT_FIELD = 'h5p-text-input-field-textfield';
   var SAVE_MESSAGE = 'h5p-text-input-field-message-save';
 
+  var ariaId = 0;
+
   /**
    * Initialize module.
    * @param {Object} params Behavior settings
@@ -34,6 +36,7 @@ H5P.TextInputField = (function ($) {
     if (this.contentData !== undefined && this.contentData.previousState !== undefined) {
       this.previousState = this.contentData.previousState;
     }
+    ariaId++;
   }
 
   /**
@@ -46,7 +49,8 @@ H5P.TextInputField = (function ($) {
     this.$inner = $container.addClass(MAIN_CONTAINER);
 
     this.$taskDescription = $('<div>', {
-      'class': INPUT_LABEL,
+      id: ariaId,
+      'class': INPUT_LABEL + (this.params.requiredField ? ' required' : ''),
       'html': self.params.taskDescription
     }).appendTo(self.$inner);
 
@@ -54,7 +58,9 @@ H5P.TextInputField = (function ($) {
       'class': INPUT_FIELD,
       'rows': parseInt(self.params.inputFieldSize, 10),
       'placeholder': self.params.placeholderText,
-      'tabindex': '0'
+      'tabindex': '0',
+      'aria-required': this.params.requiredField,
+      'aria-labelledby': ariaId
     }).appendTo(self.$inner);
 
     // set state from previous one

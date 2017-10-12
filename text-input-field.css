@@ -31,4 +31,13 @@
 .h5p-text-input-field .h5p-text-input-field-message-save-animation {
   animation-name: h5p-text-input-field-message-save-opacity;
   animation-duration: 1s;
+
+.h5p-text-input-field-label p {
+  display: inline-block;
+}
+
+.h5p-text-input-field-label.required:after {
+  font-size: 1.1em;
+  content: '*';
+  color: #da0001;
 }
