@@ -32,9 +32,8 @@ H5P.TextInputField = (function ($) {
     }, params);
 
     // Set the maximum length for the textarea
-    this.maxTextLength = (typeof this.params.maximumLength === 'undefined') ?
-      '' :
-      parseInt(this.params.maximumLength, 10);
+    this.maxTextLength = (typeof this.params.maximumLength === 'undefined') ? '' : parseInt(this.params.maximumLength, 10);
+
     ariaId++;
   }
 
