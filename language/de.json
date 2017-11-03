@@ -9,6 +9,10 @@
       "description":"Ein Platzhaltertext für den Nutzer"
     },
     {
+      "label":"Maximale Textlänge",
+      "description":"Maximale Zeichenzahl für den Text."
+    },
+    {
       "label":"Größe des Eingabefelds",
       "description":"Die Größe des Eingabefelds als Zahl der Zeilen.",
       "options":[
@@ -25,8 +29,13 @@
       "default":"1"
     },
     {
-      "label":"Erforlderliches Feld",
+      "label":"Erforderliches Feld",
       "description":"Anwählen, um Eingaben erforderlich zu machen. Der Nutzer muss alle erforderlichen Felder bearbeiten, um ein Dokument exportieren zu können."
+    },
+    {
+      "label":"Verbleibende Zeichen",
+      "default":"Verbleibende Zeichenzahl: @chars",
+      "description":"Hinweis auf die verbleibende Zeichenzahl. Du kannst @chars als Platzhalter für die entsprechende Zahl benutzen."
     }
   ]
 }

@@ -18,6 +18,9 @@
   margin-bottom: 0.2em;
 }
 
+.h5p-text-input-field .h5p-text-input-field-message {
+  font-size: 0.8em;
+
 .h5p-text-input-field-label p {
   display: inline-block;
 }
