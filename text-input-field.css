@@ -23,6 +23,15 @@
   margin-bottom: 0.2em;
 }
 
+.h5p-text-input-field .h5p-text-input-field-message-wrapper {
+  overflow:auto;
+}
+
+.h5p-text-input-field .h5p-text-input-field-message-char {
+  font-size: 0.8em;
+  float: left;
+}
+
 .h5p-text-input-field .h5p-text-input-field-message-save {
   font-size: 0.8em;
   float: right;
@@ -31,6 +40,7 @@
 .h5p-text-input-field .h5p-text-input-field-message-save-animation {
   animation-name: h5p-text-input-field-message-save-opacity;
   animation-duration: 1s;
+}
 
 .h5p-text-input-field-label p {
   display: inline-block;

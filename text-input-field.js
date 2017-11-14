@@ -9,6 +9,8 @@ H5P.TextInputField = (function ($) {
   var MAIN_CONTAINER = 'h5p-text-input-field';
   var INPUT_LABEL = 'h5p-text-input-field-label';
   var INPUT_FIELD = 'h5p-text-input-field-textfield';
+  var WRAPPER_MESSAGE = 'h5p-text-input-field-message-wrapper';
+  var CHAR_MESSAGE = 'h5p-text-input-field-message-char';
   var SAVE_MESSAGE = 'h5p-text-input-field-message-save';
 
   var ariaId = 0;
@@ -32,10 +34,14 @@ H5P.TextInputField = (function ($) {
       requiredField: false
     }, params);
 
+    // Set the maximum length for the textarea
+    this.maxTextLength = (typeof this.params.maximumLength === 'undefined') ? '' : parseInt(this.params.maximumLength, 10);
+
     // Get previous state
     if (this.contentData !== undefined && this.contentData.previousState !== undefined) {
       this.previousState = this.contentData.previousState;
     }
+
     ariaId++;
   }
 
@@ -57,6 +63,7 @@ H5P.TextInputField = (function ($) {
     this.$inputField = $('<textarea>', {
       'class': INPUT_FIELD,
       'rows': parseInt(self.params.inputFieldSize, 10),
+      'maxlength': self.maxTextLength,
       'placeholder': self.params.placeholderText,
       'tabindex': '0',
       'aria-required': this.params.requiredField,
@@ -66,13 +73,25 @@ H5P.TextInputField = (function ($) {
     // set state from previous one
     this.setState(this.previousState);
 
+    var $wrapperMessage = $('<div>', {'class': WRAPPER_MESSAGE}).appendTo(self.$inner);
+    this.$charMessage = $('<div>', {'class': CHAR_MESSAGE}).appendTo($wrapperMessage);
+    this.$saveMessage = $('<div>', {'class': SAVE_MESSAGE});
+    if (self.params.maximumLength !== undefined) {
+      this.$saveMessage.appendTo($wrapperMessage);
+    }
+    else {
+      this.$saveMessage.appendTo(self.$inner);
+    }
+
     this.$inputField.on('change keyup paste', function() {
+      // This will prevent moving DOM elements down on saving for the first time
       self.updateMessageSaved('');
+      if (self.params.maximumLength !== undefined) {
+        self.$charMessage.html(self.params.remainingChars.replace(/@chars/g, self.computeRemainingChars()));
+      }
     });
 
-    this.$saveMessage = $('<div>', {
-      'class': SAVE_MESSAGE
-    }).appendTo(self.$inner);
+    this.$inputField.trigger('change');
   };
 
   /**
@@ -102,6 +121,7 @@ H5P.TextInputField = (function ($) {
       value: this.$inputField.val()
     };
   };
+
   /**
    * Get current state for H5P.Question.
    * @return {object} Current state.
@@ -129,6 +149,7 @@ H5P.TextInputField = (function ($) {
       self.$inputField.html(previousState.inputField || '');
     }
   };
+
   /**
    * Update the indicator message for saved text
    * @param {string} saved - Message to indicate the text was saved
@@ -142,6 +163,14 @@ H5P.TextInputField = (function ($) {
       this.$saveMessage.addClass('h5p-text-input-field-message-save-animation');
     }
     this.$saveMessage.html(saved);
+  };
+
+  /**
+   * Compute the remaining number of characters
+   * @returns {number} Returns number of characters left
+   */
+  TextInputField.prototype.computeRemainingChars = function() {
+    return this.maxTextLength - this.$inputField.val().length;
   };
 
   return TextInputField;

@@ -9,6 +9,10 @@
       "description":"ユーザーのためのプレースホルダーテキスト。"
     },
     {
+      "label":"Maximum text length",
+      "description":"Maximum number of characters for the text."
+    },
+    {
       "label":"入力フィールドのサイズ",
       "description":"入力フィールドのサイズ（行数）",
       "options":[
@@ -27,6 +31,16 @@
     {
       "label":"必須フィールド",
       "description":"このフィールドを必須にするためにはチェックしてください。文書をエクスポートするためには、すべての必須フィールドにユーザーが答える必要があります。"
+    },
+    {
+      "label":"Remaining characters",
+      "default":"Remaining characters: @chars",
+      "description":"Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+    },
+    {
+      "label":"Save message",
+      "description":"Message indicating that the text has been saved",
+      "default":"saved"
     }
   ]
 }
