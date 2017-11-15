@@ -36,6 +36,11 @@
       "label":"Verbleibende Zeichen",
       "default":"Verbleibende Zeichenzahl: @chars",
       "description":"Hinweis auf die verbleibende Zeichenzahl. Du kannst @chars als Platzhalter für die entsprechende Zahl benutzen."
+    },
+    {
+      "label":"Speichernachricht",
+      "description":"Hinweistext, der anzeigt, dass der Text gespeichert wurde",
+      "default":"gespeichert"
     }
   ]
 }

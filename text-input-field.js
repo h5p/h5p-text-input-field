@@ -9,7 +9,9 @@ H5P.TextInputField = (function ($) {
   var MAIN_CONTAINER = 'h5p-text-input-field';
   var INPUT_LABEL = 'h5p-text-input-field-label';
   var INPUT_FIELD = 'h5p-text-input-field-textfield';
-  var CHAR_MESSAGE = 'h5p-text-input-field-message';
+  var WRAPPER_MESSAGE = 'h5p-text-input-field-message-wrapper';
+  var CHAR_MESSAGE = 'h5p-text-input-field-message-char';
+  var SAVE_MESSAGE = 'h5p-text-input-field-message-save';
 
   var ariaId = 0;
 
@@ -19,9 +21,10 @@ H5P.TextInputField = (function ($) {
    * @param {Number} id Content identification
    * @returns {Object} TextInputField TextInputField instance
    */
-  function TextInputField(params, id) {
+  function TextInputField(params, id, contentData) {
     this.$ = $(this);
     this.id = id;
+    this.contentData = contentData;
 
     // Set default behavior.
     this.params = $.extend({}, {
@@ -33,6 +36,11 @@ H5P.TextInputField = (function ($) {
 
     // Set the maximum length for the textarea
     this.maxTextLength = (typeof this.params.maximumLength === 'undefined') ? '' : parseInt(this.params.maximumLength, 10);
+
+    // Get previous state
+    if (this.contentData !== undefined && this.contentData.previousState !== undefined) {
+      this.previousState = this.contentData.previousState;
+    }
 
     ariaId++;
   }
@@ -62,18 +70,28 @@ H5P.TextInputField = (function ($) {
       'aria-labelledby': ariaId
     }).appendTo(self.$inner);
 
-    if (self.maxTextLength !== '') {
-      this.$spaceMessage = $('<div>', {
-        'class': CHAR_MESSAGE
-      }).appendTo(self.$inner);
+    // set state from previous one
+    this.setState(this.previousState);
 
-      this.$inputField.on('change keyup paste', function() {
-        self.$spaceMessage.html(
-          self.params.remainingChars.replace(/@chars/g, self.computeRemainingChars()));
-        });
+    var $wrapperMessage = $('<div>', {'class': WRAPPER_MESSAGE}).appendTo(self.$inner);
+    this.$charMessage = $('<div>', {'class': CHAR_MESSAGE}).appendTo($wrapperMessage);
+    this.$saveMessage = $('<div>', {'class': SAVE_MESSAGE});
+    if (self.params.maximumLength !== undefined) {
+      this.$saveMessage.appendTo($wrapperMessage);
+    }
+    else {
+      this.$saveMessage.appendTo(self.$inner);
+    }
 
-        this.$inputField.trigger('change');
+    this.$inputField.on('change keyup paste', function() {
+      // This will prevent moving DOM elements down on saving for the first time
+      self.updateMessageSaved('');
+      if (self.params.maximumLength !== undefined) {
+        self.$charMessage.html(self.params.remainingChars.replace(/@chars/g, self.computeRemainingChars()));
       }
+    });
+
+    this.$inputField.trigger('change');
   };
 
   /**
@@ -102,6 +120,49 @@ H5P.TextInputField = (function ($) {
       description: this.params.taskDescription.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""),
       value: this.$inputField.val()
     };
+  };
+
+  /**
+   * Get current state for H5P.Question.
+   * @return {object} Current state.
+   */
+  TextInputField.prototype.getCurrentState = function () {
+    this.updateMessageSaved(this.params.messageSave);
+
+    // We could have just uses a string, but you never know when you need to store more parameters
+    return {
+      'inputField': this.$inputField.val()
+    };
+  };
+
+  /**
+   * Set state from previous state.
+   * @param {object} previousState - PreviousState.
+   */
+  TextInputField.prototype.setState = function (previousState) {
+    var self = this;
+
+    if (previousState === undefined) {
+      return;
+    }
+    if (typeof previousState === 'object' && !Array.isArray(previousState)) {
+      self.$inputField.html(previousState.inputField || '');
+    }
+  };
+
+  /**
+   * Update the indicator message for saved text
+   * @param {string} saved - Message to indicate the text was saved
+   */
+  TextInputField.prototype.updateMessageSaved = function (saved) {
+    // Add/remove blending effect
+    if (saved === undefined || saved === '') {
+      this.$saveMessage.removeClass('h5p-text-input-field-message-save-animation');
+    }
+    else {
+      this.$saveMessage.addClass('h5p-text-input-field-message-save-animation');
+    }
+    this.$saveMessage.html(saved);
   };
 
   /**

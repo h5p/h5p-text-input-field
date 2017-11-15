@@ -69,12 +69,21 @@
     "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
   },
   {
-      "name": "remainingChars",
-      "type": "text",
-      "label": "Remaining characters",
-      "importance": "low",
-      "common": true,
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+    "name": "remainingChars",
+    "type": "text",
+    "label": "Remaining characters",
+    "importance": "low",
+    "common": true,
+    "default": "Remaining characters: @chars",
+    "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+  },
+  {
+    "name": "messageSave",
+    "type": "text",
+    "label": "Save message",
+    "description": "Message indicating that the text has been saved",
+    "importance": "low",
+    "common": true,
+    "default": "saved"
   }
 ]
