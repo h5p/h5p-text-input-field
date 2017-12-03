@@ -36,11 +36,6 @@
       "label":"Remaining characters",
       "default":"Remaining characters: @chars",
       "description":"Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
-    },
-    {
-      "label":"Save message",
-      "description":"Message indicating that the text has been saved",
-      "default":"saved"
     }
   ]
 }

@@ -76,14 +76,5 @@
     "common": true,
     "default": "Remaining characters: @chars",
     "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
-  },
-  {
-    "name": "messageSave",
-    "type": "text",
-    "label": "Save message",
-    "description": "Message indicating that the text has been saved",
-    "importance": "low",
-    "common": true,
-    "default": "saved"
   }
 ]
