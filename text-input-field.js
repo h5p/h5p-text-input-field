@@ -11,7 +11,6 @@ H5P.TextInputField = (function ($) {
   var INPUT_FIELD = 'h5p-text-input-field-textfield';
   var WRAPPER_MESSAGE = 'h5p-text-input-field-message-wrapper';
   var CHAR_MESSAGE = 'h5p-text-input-field-message-char';
-  var SAVE_MESSAGE = 'h5p-text-input-field-message-save';
 
   var ariaId = 0;
 
@@ -75,17 +74,7 @@ H5P.TextInputField = (function ($) {
 
     var $wrapperMessage = $('<div>', {'class': WRAPPER_MESSAGE}).appendTo(self.$inner);
     this.$charMessage = $('<div>', {'class': CHAR_MESSAGE}).appendTo($wrapperMessage);
-    this.$saveMessage = $('<div>', {'class': SAVE_MESSAGE});
-    if (self.params.maximumLength !== undefined) {
-      this.$saveMessage.appendTo($wrapperMessage);
-    }
-    else {
-      this.$saveMessage.appendTo(self.$inner);
-    }
-
     this.$inputField.on('change keyup paste', function() {
-      // This will prevent moving DOM elements down on saving for the first time
-      self.updateMessageSaved('');
       if (self.params.maximumLength !== undefined) {
         self.$charMessage.html(self.params.remainingChars.replace(/@chars/g, self.computeRemainingChars()));
       }
@@ -127,8 +116,6 @@ H5P.TextInputField = (function ($) {
    * @return {object} Current state.
    */
   TextInputField.prototype.getCurrentState = function () {
-    this.updateMessageSaved(this.params.messageSave);
-
     // We could have just uses a string, but you never know when you need to store more parameters
     return {
       'inputField': this.$inputField.val()
@@ -148,21 +135,6 @@ H5P.TextInputField = (function ($) {
     if (typeof previousState === 'object' && !Array.isArray(previousState)) {
       self.$inputField.html(previousState.inputField || '');
     }
-  };
-
-  /**
-   * Update the indicator message for saved text
-   * @param {string} saved - Message to indicate the text was saved
-   */
-  TextInputField.prototype.updateMessageSaved = function (saved) {
-    // Add/remove blending effect
-    if (saved === undefined || saved === '') {
-      this.$saveMessage.removeClass('h5p-text-input-field-message-save-animation');
-    }
-    else {
-      this.$saveMessage.addClass('h5p-text-input-field-message-save-animation');
-    }
-    this.$saveMessage.html(saved);
   };
 
   /**
