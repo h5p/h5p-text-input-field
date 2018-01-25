@@ -16,6 +16,9 @@
   "preloadedJs": [
     {
       "path": "text-input-field.js"
+    },
+    {
+      "path": "xapi-generator.js"
     }
   ]
 }
