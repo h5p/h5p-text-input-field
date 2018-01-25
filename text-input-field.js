@@ -33,6 +33,8 @@ H5P.TextInputField = (function ($) {
       requiredField: false
     }, params);
 
+    this.xApiGenerator = new H5P.TextInputField.xApiGenerator(this.params.taskDescription.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""));
+
     // Set the maximum length for the textarea
     this.maxTextLength = (typeof this.params.maximumLength === 'undefined') ? '' : parseInt(this.params.maximumLength, 10);
 
@@ -42,6 +44,8 @@ H5P.TextInputField = (function ($) {
     }
 
     ariaId++;
+
+    var self = this;
   }
 
   /**
@@ -78,6 +82,12 @@ H5P.TextInputField = (function ($) {
       if (self.params.maximumLength !== undefined) {
         self.$charMessage.html(self.params.remainingChars.replace(/@chars/g, self.computeRemainingChars()));
       }
+    });
+
+    this.$inputField.blur(function() {
+      var xApiTemplate = self.createXAPIEventTemplate('interacted');
+      var xApiEvent = self.xApiGenerator.generateXApi(xApiTemplate, self.$inputField.val());
+      self.trigger(xApiEvent);
     });
 
     this.$inputField.trigger('change');
@@ -141,9 +151,32 @@ H5P.TextInputField = (function ($) {
    * Compute the remaining number of characters
    * @returns {number} Returns number of characters left
    */
-  TextInputField.prototype.computeRemainingChars = function() {
+  TextInputField.prototype.computeRemainingChars = function () {
     return this.maxTextLength - this.$inputField.val().length;
   };
+
+  /**
+   * Triggers an 'answered' xAPI event for all inputs
+   */
+  TextInputField.prototype.triggerAnsweredEvent = function  () {
+    var xApiTemplate = this.createXAPIEventTemplate('answered');
+    var xApiEvent = this.xApiGenerator.generateXApi(xApiTemplate, this.getCurrentState().inputField);
+    this.trigger(xApiEvent);
+  };
+
+  /**
+   * Get xAPI data.
+   * Contract used by report rendering engine.
+   *
+   * @see contract at {@link https://h5p.org/documentation/developers/contracts#guides-header-6}
+   */
+  TextInputField.prototype.getXAPIData = function () {
+    var xApiTemplate = this.createXAPIEventTemplate('answered');
+    var xApiEvent = this.xApiGenerator.generateXApi(xApiTemplate, this.getCurrentState().inputField);
+    return {
+      statement: xApiEvent.data.statement
+    };
+  }
 
   return TextInputField;
 }(H5P.jQuery));
