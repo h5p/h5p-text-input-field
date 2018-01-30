@@ -33,7 +33,8 @@ H5P.TextInputField = (function ($) {
       requiredField: false
     }, params);
 
-    this.xApiGenerator = new H5P.TextInputField.xApiGenerator(this.params.taskDescription.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""));
+    // Sanitize the task description as it comes in HTML
+    this.XAPIGenerator = new H5P.TextInputField.XAPIGenerator(this.params.taskDescription.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""));
 
     // Set the maximum length for the textarea
     this.maxTextLength = (typeof this.params.maximumLength === 'undefined') ? '' : parseInt(this.params.maximumLength, 10);
@@ -44,8 +45,6 @@ H5P.TextInputField = (function ($) {
     }
 
     ariaId++;
-
-    var self = this;
   }
 
   /**
@@ -86,7 +85,7 @@ H5P.TextInputField = (function ($) {
 
     this.$inputField.blur(function() {
       var xApiTemplate = self.createXAPIEventTemplate('interacted');
-      var xApiEvent = self.xApiGenerator.generateXApi(xApiTemplate, self.$inputField.val());
+      var xApiEvent = self.XAPIGenerator.generateXApi(xApiTemplate, self.$inputField.val());
       self.trigger(xApiEvent);
     });
 
@@ -160,7 +159,7 @@ H5P.TextInputField = (function ($) {
    */
   TextInputField.prototype.triggerAnsweredEvent = function  () {
     var xApiTemplate = this.createXAPIEventTemplate('answered');
-    var xApiEvent = this.xApiGenerator.generateXApi(xApiTemplate, this.getCurrentState().inputField);
+    var xApiEvent = this.XAPIGenerator.generateXApi(xApiTemplate, this.getCurrentState().inputField);
     this.trigger(xApiEvent);
   };
 
@@ -172,7 +171,7 @@ H5P.TextInputField = (function ($) {
    */
   TextInputField.prototype.getXAPIData = function () {
     var xApiTemplate = this.createXAPIEventTemplate('answered');
-    var xApiEvent = this.xApiGenerator.generateXApi(xApiTemplate, this.getCurrentState().inputField);
+    var xApiEvent = this.XAPIGenerator.generateXApi(xApiTemplate, this.getCurrentState().inputField);
     return {
       statement: xApiEvent.data.statement
     };
