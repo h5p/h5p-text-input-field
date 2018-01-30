@@ -22,7 +22,7 @@ H5P.TextInputField.XAPIGenerator = (function () {
   /**
    * Extend xAPI template
    * @param {H5P.XAPIEvent} xApiTemplate xAPI event template
-   * @param {string} answer Answer to open ended question
+   * @param {string} answer Text input given 
    * @return {H5P.XAPIEvent} Extended xAPI event
    */
   XAPIGenerator.prototype.generateXApi = function (xApiTemplate, answer) {
