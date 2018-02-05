@@ -179,7 +179,7 @@ H5P.TextInputField = (function ($) {
     return {
       statement: xApiEvent.data.statement
     };
-  }
+  };
 
   return TextInputField;
 }(H5P.jQuery));
