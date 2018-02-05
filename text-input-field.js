@@ -113,9 +113,13 @@ H5P.TextInputField = (function ($) {
    * @returns {description:string, value:string} Returns input field
    */
   TextInputField.prototype.getInput = function () {
+    // Strip away HTML from description:
+    var descriptionDoc = new DOMParser().parseFromString(this.params.taskDescription, 'text/html');
+    var description = descriptionDoc.body.textContent || "";
+
     // Remove trailing newlines
     return {
-      description: this.params.taskDescription.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""),
+      description: description.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""),
       value: this.$inputField.val()
     };
   };
