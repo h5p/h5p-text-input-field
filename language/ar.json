@@ -1,20 +1,20 @@
 {
   "semantics":[
     {
-      "label":"Description of inputfield",
-      "description":"Description of what the user should input."
+      "label":"وصف حقل الإدخال",
+      "description":"وصف ما يجب على المستخدم إدخاله."
     },
     {
-      "label":"Placeholder text",
-      "description":"A placeholder text for the user."
+      "label":"النص البديل",
+      "description":"نص بديل للمستخدم"
     },
     {
-      "label":"Maximum text length",
-      "description":"Maximum number of characters for the text."
+      "label":"طول النص الاعظمي",
+      "description":"العدد الأعظمي لمحارف النص."
     },
     {
-      "label":"Input field size",
-      "description":"The size of the input field in amount of lines it will cover.",
+      "label":"حجم حقل الادخال",
+      "description":"حجم حقل الإدخال بكمية الخطوط التي ستغطيها.",
       "options":[
         {
           "label":"1 line"
@@ -29,13 +29,13 @@
       "default":"1"
     },
     {
-      "label":"Required field",
-      "description":"Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label":"حقل مطلوب",
+      "description":"التحقق من جعل هذا الحقل مطلوب، يجب على المستخدم الاجابة عن جميع الحقول المطلوبة ليتمكن من تصدير ملف ."
     },
     {
-      "label":"Remaining characters",
+      "label":"المحارف المتبقية",
       "default":"Remaining characters: @chars",
-      "description":"Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "description":"رسالة للمحارف المتبقية ، تستطيع استخدام @ للمحارف التي سيتم استبدالها بالرقم المقابل ."
     }
   ]
 }
