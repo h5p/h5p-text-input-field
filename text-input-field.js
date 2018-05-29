@@ -117,9 +117,11 @@ H5P.TextInputField = (function ($) {
     var descriptionDoc = new DOMParser().parseFromString(this.params.taskDescription, 'text/html');
     var description = descriptionDoc.body.textContent || "";
 
+    console.log(description.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""));
+
     // Remove trailing newlines
     return {
-      description: description.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""),
+      description: description.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, "").replace(/\t/g, ' -'),
       value: this.$inputField.val()
     };
   };
