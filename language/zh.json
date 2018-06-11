@@ -25,17 +25,16 @@
         {
           "label": "10 行"
         }
-      ],
-      "default": "1"
+      ]
     },
     {
       "label": "必填欄位",
       "description": "勾選後，用戶就一定要填寫這個欄位不可略過。用戶在填寫所有必填欄位後，才可匯出文件。"
     },
     {
-      "label":"可用字數訊息",
-      "default":"還可輸入 @chars 字。",
-      "description":"讓用戶知道還可輸入多少字數。變數 @chars 表示字數。"
+      "label": "可用字數訊息",
+      "default": "還可輸入 @chars 字。",
+      "description": "讓用戶知道還可輸入多少字數。變數 @chars 表示字數。"
     }
   ]
 }
