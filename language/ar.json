@@ -17,13 +17,13 @@
       "description":"حجم حقل الإدخال بكمية الخطوط التي ستغطيها.",
       "options":[
         {
-          "label":"1 line"
+          "label":"1 سطر"
         },
         {
-          "label":"3 lines"
+          "label":"3 اسطر"
         },
         {
-          "label":"10 lines"
+          "label":"10 اسطر"
         }
       ],
       "default":"1"
