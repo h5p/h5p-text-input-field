@@ -20,5 +20,9 @@
     {
       "path": "xapi-generator.js"
     }
-  ]
+  ],
+  "metadataSettings": {
+    "disable": 1,
+    "disableExtraTitleField": 1
+  }
 }
