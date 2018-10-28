@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "Opis polja za unos",
+      "description": "Opis šta korisnik treba unijeti."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "Prostor za tekst",
+      "description": "Prostor za tekst korisnika."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Maksimalna duljina teksta",
+      "description": "Maksimalan broj karaktera za tekst."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "Veličina polja za unos",
+      "description": "Veličina polja za unos u broju linija.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 linija"
         },
         {
-          "label": "3 lines"
+          "label": "3 linije"
         },
         {
-          "label": "10 lines"
+          "label": "10 linija"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Obavezno polje",
+      "description": "Označi ovo polje ka obavezno. Korisnik mora odgovoriti na sva obavezna polja kako bi bio u stanju eksportovati dokument."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Preostali karakteri",
+      "default": "Preostali karakteri: @chars",
+      "description": "Poruka za preostale karaktere. Možete koristiti @chars koji će biti zamijenjeni sa odgovarajućim brojem."
     }
   ]
 }
