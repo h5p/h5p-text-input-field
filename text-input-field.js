@@ -77,13 +77,13 @@ H5P.TextInputField = (function ($) {
 
     var $wrapperMessage = $('<div>', {'class': WRAPPER_MESSAGE}).appendTo(self.$inner);
     this.$charMessage = $('<div>', {'class': CHAR_MESSAGE}).appendTo($wrapperMessage);
-    this.$inputField.on('change keyup paste', function() {
+    this.$inputField.on('change keyup paste', function () {
       if (self.params.maximumLength !== undefined) {
         self.$charMessage.html(self.params.remainingChars.replace(/@chars/g, self.computeRemainingChars()));
       }
     });
 
-    this.$inputField.blur(function() {
+    this.$inputField.blur(function () {
       var xApiTemplate = self.createXAPIEventTemplate('interacted');
       var xApiEvent = self.XAPIGenerator.generateXApi(xApiTemplate, self.$inputField.val());
       self.trigger(xApiEvent);
