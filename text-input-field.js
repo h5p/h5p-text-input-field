@@ -118,8 +118,16 @@ H5P.TextInputField = (function ($) {
     var description = descriptionDoc.body.textContent || "";
 
     // Remove trailing newlines
+    var cleanedTaskDescription = description
+      .replace(/^\s+|\s+$/g, '')
+      .replace(/(<p>|<\/p>)/img, "");
+
+    // Escape html
+    var descriptionElement = document.createElement('div');
+    descriptionElement.textContent = cleanedTaskDescription;
+
     return {
-      description: description.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""),
+      description: descriptionElement.innerHTML,
       value: this.$inputField.val()
     };
   };
