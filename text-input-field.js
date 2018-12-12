@@ -167,7 +167,7 @@ H5P.TextInputField = (function ($) {
     if (this.$inputField.val().length === 0) {
       this.$inputField.addClass('required-input');
     }
-    this.$inputField.one('change keyup paste', function () {
+    this.$inputField.one('input', function () {
       self.$inputField.removeClass('required-input');
     });
   };
