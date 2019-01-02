@@ -115,7 +115,7 @@ H5P.TextInputField = (function ($) {
   TextInputField.prototype.getInput = function () {
     // Strip away HTML from description:
     var descriptionDoc = new DOMParser().parseFromString(this.params.taskDescription, 'text/html');
-    var description = descriptionDoc.body.textContent || "";
+    var description = (descriptionDoc.body && descriptionDoc.body.textContent) ? descriptionDoc.body.textContent : '';
 
     // Remove trailing newlines
     var cleanedTaskDescription = description
