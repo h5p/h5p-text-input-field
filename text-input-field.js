@@ -159,6 +159,20 @@ H5P.TextInputField = (function ($) {
   };
 
   /**
+   * Mark field if empty until it's filled.
+   */
+  TextInputField.prototype.markEmptyField = function () {
+    const self = this;
+
+    if (this.$inputField.val().length === 0) {
+      this.$inputField.addClass('required-input');
+    }
+    this.$inputField.one('input', function () {
+      self.$inputField.removeClass('required-input');
+    });
+  };
+
+  /**
    * Compute the remaining number of characters
    * @returns {number} Returns number of characters left
    */
