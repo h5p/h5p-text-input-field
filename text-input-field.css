@@ -3,7 +3,6 @@
   width: calc(100% - 0.8em);
   resize: none;
   border: 1px solid #C7C7C7;
-  border-top: 2px solid #C7C7C7;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
@@ -16,6 +15,10 @@
 .h5p-text-input-field .h5p-text-input-field-label > * {
   margin-top: 0.2em;
   margin-bottom: 0.2em;
+}
+
+.h5p-text-input-field .h5p-text-input-field-textfield.required-input {
+  border-color: red;
 }
 
 .h5p-text-input-field .h5p-text-input-field-message-wrapper {

@@ -115,11 +115,19 @@ H5P.TextInputField = (function ($) {
   TextInputField.prototype.getInput = function () {
     // Strip away HTML from description:
     var descriptionDoc = new DOMParser().parseFromString(this.params.taskDescription, 'text/html');
-    var description = descriptionDoc.body.textContent || "";
+    var description = (descriptionDoc.body && descriptionDoc.body.textContent) ? descriptionDoc.body.textContent : '';
 
     // Remove trailing newlines
+    var cleanedTaskDescription = description
+      .replace(/^\s+|\s+$/g, '')
+      .replace(/(<p>|<\/p>)/img, "");
+
+    // Escape html
+    var descriptionElement = document.createElement('div');
+    descriptionElement.textContent = cleanedTaskDescription;
+
     return {
-      description: description.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""),
+      description: descriptionElement.innerHTML,
       value: this.$inputField.val()
     };
   };
@@ -148,6 +156,20 @@ H5P.TextInputField = (function ($) {
     if (typeof previousState === 'object' && !Array.isArray(previousState)) {
       self.$inputField.html(previousState.inputField || '');
     }
+  };
+
+  /**
+   * Mark field if empty until it's filled.
+   */
+  TextInputField.prototype.markEmptyField = function () {
+    const self = this;
+
+    if (this.$inputField.val().length === 0) {
+      this.$inputField.addClass('required-input');
+    }
+    this.$inputField.one('input', function () {
+      self.$inputField.removeClass('required-input');
+    });
   };
 
   /**

@@ -4,7 +4,7 @@ H5P.TextInputField = H5P.TextInputField || {};
 /**
  * Generate xAPI statements
  */
-H5P.TextInputField.XAPIGenerator = (function () {
+H5P.TextInputField.XAPIGenerator = (function ($) {
 
   function XAPIGenerator(question) {
     // Set up default response object
@@ -22,24 +22,24 @@ H5P.TextInputField.XAPIGenerator = (function () {
   /**
    * Extend xAPI template
    * @param {H5P.XAPIEvent} xApiTemplate xAPI event template
-   * @param {string} answer Text input given 
+   * @param {string} answer Text input given
    * @return {H5P.XAPIEvent} Extended xAPI event
    */
   XAPIGenerator.prototype.generateXApi = function (xApiTemplate, answer) {
-    const statement = xApiTemplate.data.statement;
-    Object.assign(statement, {
+    let statement = xApiTemplate.data.statement;
+
+    statement = $.extend(true, statement, {
       result: {
         response: answer
       }
     });
 
     if (statement.object) {
-      const definition = statement.object.definition;
-      Object.assign(definition, this.event);
+      statement.object.definition = $.extend(true, statement.object.definition, this.event);
     }
 
     return xApiTemplate;
   };
 
   return XAPIGenerator;
-})();
+})(H5P.jQuery);
