@@ -2,11 +2,11 @@
   "semantics": [
     {
       "label": "Beschreibung für das Eingabefeld",
-      "description": "Beschreibung dafür, was der Nutzer eingeben soll"
+      "description": "Beschreibung, was der Nutzer eingeben soll"
     },
     {
       "label": "Platzhaltertext",
-      "description": "Ein Platzhaltertext für den Nutzer"
+      "description": "Ein Platzhaltertext für die Lernenden"
     },
     {
       "label": "Maximale Textlänge",
@@ -14,7 +14,7 @@
     },
     {
       "label": "Größe des Eingabefelds",
-      "description": "Die Größe des Eingabefelds als Zahl der Zeilen.",
+      "description": "Die Zeilenzahl für das Eingabefeld.",
       "options": [
         {
           "label": "1 Zeile"
@@ -29,7 +29,7 @@
     },
     {
       "label": "Erforderliches Feld",
-      "description": "Anwählen, um Eingaben erforderlich zu machen. Der Nutzer muss alle erforderlichen Felder bearbeiten, um ein Dokument exportieren zu können."
+      "description": "Anwählen, um Eingaben erforderlich zu machen. Die Lernenden müssen alle erforderlichen Felder ausfüllen, um ein Dokument exportieren zu können."
     },
     {
       "label": "Verbleibende Zeichen",
