@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "Описание поля ввода",
+      "description": "Описание того, что пользователь должен ввести."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "Текст заполнителя",
+      "description": "Текст заполнителя для пользователя."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Максимальная длина текста",
+      "description": "Максимальное количество символов для текста."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "Размер поля ввода",
+      "description": "Размер поля ввода в количестве строк, которое оно будет охватывать.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 строка"
         },
         {
-          "label": "3 lines"
+          "label": "3 строки"
         },
         {
-          "label": "10 lines"
+          "label": "10 строк"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Обязательное поле",
+      "description": "Отметьте, чтобы сделать это поле обязательным, пользователь должен ответить на все обязательные поля, чтобы иметь возможность экспортировать документ."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Осталось знаков",
+      "default": "Осталось знаков: @chars",
+      "description": "Сообщение для оставшихся знаков. Вы можете использовать @chars который будет заменен на соответствующее число."
     }
   ]
 }
