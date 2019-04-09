@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "Sisendvälja kirjeldus",
+      "description": "Kasutajalt oodatava sisendi kirjeldus."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "Kohahoidja tekst",
+      "description": "Kohahoidja tekst kasutaja jaoks."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Suurim tekstipikkus",
+      "description": "Teksti suurim märkide hulk."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "Sisendvälja suurus",
+      "description": "Sisendvälja suurus ridades.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 rida"
         },
         {
-          "label": "3 lines"
+          "label": "3 rida"
         },
         {
-          "label": "10 lines"
+          "label": "10 rida"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Nõutud väli",
+      "description": "Märgi, et muuta väli nõutud väljaks - kasutaja peab dokumendi eksportimiseks vastama kõik nõutud väljad selleks."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Allesjäänud märke",
+      "default": "Allesjäänud märke: @chars",
+      "description": "Allesjäänud märkide arvu teade. Kasutada saab muutujat @chars, mis asendatakse vastava arvuga."
     }
   ]
 }
