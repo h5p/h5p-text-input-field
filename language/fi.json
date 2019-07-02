@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "Syöttökentän kuvaus",
+      "description": "Kuvaus mitä käyttäjän tulisi syöttää kenttään."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "Väliaikaisteksti",
+      "description": "Väliaikaisteksti käyttäjälle"
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Tekstin maksimipituus",
+      "description": "Tekstin maksimimerkkimäärä"
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "Syöttökentän koko",
+      "description": "Kuinka suuri kenttä on johon käyttäjä voi kirjoittaa riveissä.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 rivi"
         },
         {
-          "label": "3 lines"
+          "label": "3 riviä"
         },
         {
-          "label": "10 lines"
+          "label": "10 riviä"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Pakollinen kenttä",
+      "description": "Valitse tehdäksesi tästä kentästä pakollisen täyttää. Käyttäjän on täytettävä kaikki kentät ennen kuin hän voi ottaa dokumentin ulos."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Jäljellä oleva merkkimäärä",
+      "default": "Merkkejä jäljellä: @chars",
+      "description": "Viesti joka näytetään jäljellä oleville merkeille. Voit käyttää muuttujaa @chars joka korvataan jäljellä olevien merkkien lukumäärällä."
     }
   ]
 }
