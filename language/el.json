@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label":"Περιγραφή πλαισίου εισαγωγής κειμένου",
+      "description":"Περιγραφή του τι καλείται να εισάγει ο χρήστης."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label":"Βασικό κείμενο",
+      "description":"Ένα βασικό κείμενο για τον χρήστη."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Μέγιστο μέγεθος κειμένου",
+      "description": "Μέγιστος αριθμός χαρακτήρων για το κείμενο."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
-      "options": [
+      "label":"Μέγεθος πεδίου εισαγωγής κειμένου",
+      "description":"Το μέγεθος του πεδίου εισαγωγής κειμένου  προσδιορίζεται σύμφωνα με τον αριθμό των γραμμών που θα καταλάβει το κείμενο.",
+      "options":[
         {
-          "label": "1 line"
+          "label":"1 γραμμή"
         },
         {
-          "label": "3 lines"
+          "label":"3 γραμμές"
         },
         {
-          "label": "10 lines"
+          "label":"10 γραμμές"
         }
-      ]
+      ],
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
-    },
+      "label":"Υποχρεωτικό πεδίο",
+      "description":"Αν επιλέξετε αυτή τη ρύθμιση το πεδίο θα γίνει υποχρεωτικό. Ο χρήστης θα πρέπει να απαντήσει σε όλα τα υποχρεωτικά πεδία για να μπορέσει να εξάγει ένα έγγραφο."
+    }
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Χαρακτήρες που απομένουν",
+      "default": "Χαρακτήρες που απομένουν: @chars",
+      "description": "Μήνυμα για τους χαρακτήρες που απομένουν. Μπορείτε να χρησιμοποιήσετε τη μεταβλητή @chars."
     }
   ]
 }
