@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "Descripción de campodeentrada",
+      "description": "Descripción de lo que debería ingresar el usuario."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "Texto remplazable",
+      "description": "Un texto remplazable para el usuario."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Largo máximo del texto",
+      "description": "Número máximo de caracteres para el texto."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "Tamaño del campo de entrada",
+      "description": "El tamaño del campo de entrada en número de líneas que cubrirá.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 línea"
         },
         {
-          "label": "3 lines"
+          "label": "3 líneas"
         },
         {
-          "label": "10 lines"
+          "label": "10 líneas"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Campo requerido",
+      "description": "Seleccionar para hacer este campo requerido; el usuario debe contestar todos los campos requeridos para poder exportar un documento."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Caracteres restantes",
+      "default": "Caracteres restantes: @chars",
+      "description": "Mensaje para caracteres restantes. Usted puede usar @chars que será remplazado por el número correspondiente."
     }
   ]
 }
