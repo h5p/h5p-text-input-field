@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "Popis vstupního pole",
+      "description": "Popis toho, co by měl uživatel zadat."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "Zástupný text",
+      "description": "Zástupný text pro uživatele."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Maximální délka textu",
+      "description": "Maximální počet znaků pro text."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "Velikost vstupního pole",
+      "description": "Velikost vstupního pole v počtu řádků, které vytvoří.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 řádek"
         },
         {
-          "label": "3 lines"
+          "label": "3 řádky"
         },
         {
-          "label": "10 lines"
+          "label": "10 řádků"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Povinné pole",
+      "description": "Zaškrtněte, chcete-li, aby bylo toto pole povinné, musí uživatel odpovědět na všechna povinná pole, aby mohl dokument exportovat."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Zbývající znaky",
+      "default": "Zbývající znaky: @chars",
+      "description": "Zpráva pro zbývající znaky. Můžete použít @chars, které budou nahrazeny odpovídajícím číslem."
     }
   ]
 }
