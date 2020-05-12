@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "Beskrivning av inmatningsfält",
+      "description": "Beskrivning av vad användaren ska mata in."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "Platshållartext",
+      "description": "En platshållartext för användaren."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Max textlängd",
+      "description": "Max antal tecken för texten."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "Storlek på fält",
+      "description": "Fältets storlek, i antal rader text.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 rad"
         },
         {
-          "label": "3 lines"
+          "label": "3 rader"
         },
         {
-          "label": "10 lines"
+          "label": "10 rader"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Obligatoriska fält",
+      "description": "Bocka i för att göra detta fält obligatoriskt, användaren måste svara på alla obligagoriska fält för att exportera till ett dokument."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Återstående tecken",
+      "default": "Återstående tecken: @chars",
+      "description": "Meddelande om återstående tecken. Du kan använda @chars som kommer att ersättas av korrekt siffra."
     }
   ]
 }
