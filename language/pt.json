@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "Descrição do campo de entrada",
+      "description": "Descrição do que o utilizador deve inserir."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "Texto do espaço reservado",
+      "description": "Um texto de espaço reservado para o utilizador."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Tamanho máximo do texto",
+      "description": "Número máximo de caracteres para o texto."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "Tamanho do campo de entrada",
+      "description": "O tamanho do campo de entrada na quantidade de linhas que ele ocupará.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 linha"
         },
         {
-          "label": "3 lines"
+          "label": "3 linhas"
         },
         {
-          "label": "10 lines"
+          "label": "10 linhas"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Campo obrigatório",
+      "description": "Marque para tornar este campo obrigatório. O utilizador deve responder a todos os campos obrigatórios para poder exportar um documento."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Caracteres restantes",
+      "default": "Caracteres restantes: @chars",
+      "description": "Mensagem para os caracteres restantes. Pde usar @chars, que serão substituídos pelo número correspondente."
     }
   ]
 }
