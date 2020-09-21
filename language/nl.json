@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "Beschrijving van invoerveld",
+      "description": "Beschrijving van wat de gebruiker moet invoeren."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "Tijdelijke tekst",
+      "description": "Een tijdelijke tekst voor de gebruiker."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Maximum tekstlengte",
+      "description": "Maximum aantal tekens voor de tekst."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "Invoerveld grootte",
+      "description": "De grootte van het invoerveld in aantal regels die het kan bevatten.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 regel"
         },
         {
-          "label": "3 lines"
+          "label": "3 regels"
         },
         {
-          "label": "10 lines"
+          "label": "10 regels"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Vereist veld",
+      "description": "Aanvinken om dit veld vereist te maken, de gebruiker moet alle vereiste velden beantwoorden om een document te kunnen exporteren."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Resterende tekens",
+      "default": "Resterende tekens: @chars",
+      "description": "Bericht voor resterende tekens. Je kunt @chars gebruiken wat zal worden vervangen door het bijbehorende getal."
     }
   ]
 }
