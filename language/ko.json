@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "입력 필드에 대한 설명",
+      "description": "사용자가 입력해야 하는 항목에 대한 설명."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "자리 표시자 텍스트",
+      "description": "사용자를 위한 자리 표시자 텍스트."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "최대 텍스트 길이",
+      "description": "텍스트의 최대 문자 수입니다."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "입력 필드 크기",
+      "description": "입력 필드가 포함할 줄의 크기.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1행"
         },
         {
-          "label": "3 lines"
+          "label": "3행"
         },
         {
-          "label": "10 lines"
+          "label": "10행"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "필수필드",
+      "description": "이 필드를 필수 필드로 설정하세요. 사용자는 문서를 내보낼 수 있으려면 모든 필수 필드에 응답해야 한다."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "남아 있는 문자",
+      "default": "남아 있는 문자: @chars",
+      "description": "남아 있는 문자에 대한 메시지. @chars를 사용하면 해당 숫자로 대체된다."
     }
   ]
 }

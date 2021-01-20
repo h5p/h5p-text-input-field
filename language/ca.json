@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "Descripció del camp d’introducció de text",
+      "description": "Descripció del que l’usuari hauria d’introduir."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "Text de l’espai reservat",
+      "description": "Text de l’espai reservat per a l’usuari."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Llargada màxima del text",
+      "description": "Nombre màxim de caràcters per al text."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "Mida del camp d’introducció de text",
+      "description": "La mida del camp d’introducció de text en la quantitat de línies que ocuparà.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 línia"
         },
         {
-          "label": "3 lines"
+          "label": "3 línies"
         },
         {
-          "label": "10 lines"
+          "label": "10 línies"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Camp requerit",
+      "description": "Marqueu aquesta opció perquè aquest camp sigui obligatori. L’usuari haurà de respondre tots els camps obligatoris per poder exportar un document."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Caràcters restants",
+      "default": "Caràcters restants: @chars",
+      "description": "Missatge per als caràcters restants. Podeu utilitzar @chars, que se substituirà pel número corresponent."
     }
   ]
 }

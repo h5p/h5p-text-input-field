@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "תיאור שדה ההזנה",
+      "description": "תיאור של מה שהמשתמש אמור להזין."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "תוכן לדוגמה, המוצג בשדה ההזנה",
+      "description": "טקסט מציין מקום עבור המשתמש."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "אורך טקסט מקסימלי",
+      "description": "מספר תווים מקסימלי עבור הטקסט."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "גודל שדה הזנה",
+      "description": "גודל שדה ההזנה בכמות השורות שיכסה.",
       "options": [
         {
-          "label": "1 line"
+          "label": "שורה אחת"
         },
         {
-          "label": "3 lines"
+          "label": "3 שורות"
         },
         {
-          "label": "10 lines"
+          "label": "10 שורות"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "שדה נחוץ להזנה",
+      "description": "סמן כדי להפוך שדה זה לנחוץ, המשתמש חייב לענות על כל השדות הנחוצים כדי לייצא מסמך בהצלחה."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "תווים נותרים",
+      "default": "תווים שנותרו: chars@",
+      "description": "הודעה עבור התווים שנותרו. ניתן להשתמש ב- chars@ שיוחלף במספר המתאים."
     }
   ]
 }
