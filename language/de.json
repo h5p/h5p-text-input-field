@@ -2,11 +2,11 @@
   "semantics": [
     {
       "label": "Beschreibung für das Eingabefeld",
-      "description": "Beschreibung, was die Lernenden eingeben sollen"
+      "description": "Beschreibe, was die Lernenden eingeben sollen."
     },
     {
       "label": "Platzhaltertext",
-      "description": "Ein Platzhaltertext für die Lernenden"
+      "description": "Hier kannst du einen Platzhaltertext für die Lernenden einfügen."
     },
     {
       "label": "Maximale Textlänge",
