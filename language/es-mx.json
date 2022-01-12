@@ -6,10 +6,10 @@
     },
     {
       "label": "Texto remplazable",
-      "description": "Un texto remplazable para el usuario."
+      "description": "Un texto reemplazable para el usuario."
     },
     {
-      "label": "Largo máximo del texto",
+      "label": "Longitud máxima del texto",
       "description": "Número máximo de caracteres para el texto."
     },
     {
