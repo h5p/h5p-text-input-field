@@ -34,7 +34,7 @@
     {
       "label": "Resterende tekens",
       "default": "Resterende tekens: @chars",
-      "description": "Bericht voor resterende tekens. Je kunt @chars gebruiken wat zal worden vervangen door het bijbehorende getal."
+      "description": "Bericht voor resterende tekens. Je kunt @chars gebruiken wat zal worden vervangen door het bijbehorende aantal."
     }
   ]
 }

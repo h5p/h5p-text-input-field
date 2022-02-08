@@ -14,7 +14,7 @@
     },
     {
       "label": "Tamanho do campo de entrada",
-      "description": "O tamanho do campo de entrada na quantidade de linhas que ele ocupará.",
+      "description": "O tamanho do campo de entrada na quantidade de linhas que ocupará.",
       "options": [
         {
           "label": "1 linha"
@@ -34,7 +34,7 @@
     {
       "label": "Caracteres restantes",
       "default": "Caracteres restantes: @chars",
-      "description": "Mensagem para os caracteres restantes. Pde usar @chars, que serão substituídos pelo número correspondente."
+      "description": "Mensagem para os caracteres restantes. Pode usar @chars que será substituído pelo número correspondente."
     }
   ]
 }
