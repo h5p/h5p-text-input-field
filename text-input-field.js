@@ -36,6 +36,11 @@ H5P.TextInputField = (function ($) {
     // Sanitize the task description as it comes in HTML
     this.XAPIGenerator = new H5P.TextInputField.XAPIGenerator(this.params.taskDescription.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""));
 
+  /**
+   * Decode HTML entities
+   * @param {String}
+   * @return {String} 
+   */
     TextInputField.prototype.decodeEntity = function(inputStr) {
       var textarea = document.createElement("textarea");
       textarea.innerHTML = inputStr;
