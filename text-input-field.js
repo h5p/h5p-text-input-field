@@ -36,6 +36,12 @@ H5P.TextInputField = (function ($) {
     // Sanitize the task description as it comes in HTML
     this.XAPIGenerator = new H5P.TextInputField.XAPIGenerator(this.params.taskDescription.replace(/^\s+|\s+$/g, '').replace(/(<p>|<\/p>)/img, ""));
 
+    TextInputField.prototype.decodeEntity = function(inputStr) {
+      var textarea = document.createElement("textarea");
+      textarea.innerHTML = inputStr;
+      return textarea.value;
+    }
+
     // Set the maximum length for the textarea
     this.maxTextLength = (typeof this.params.maximumLength === 'undefined') ? '' : parseInt(this.params.maximumLength, 10);
 
@@ -66,7 +72,7 @@ H5P.TextInputField = (function ($) {
       'class': INPUT_FIELD,
       'rows': parseInt(self.params.inputFieldSize, 10),
       'maxlength': self.maxTextLength,
-      'placeholder': self.params.placeholderText,
+      'placeholder': this.decodeEntity(self.params.placeholderText),
       'tabindex': '0',
       'aria-required': this.params.requiredField,
       'aria-labelledby': ariaId
