@@ -66,7 +66,7 @@ H5P.TextInputField = (function ($) {
       'class': INPUT_FIELD,
       'rows': parseInt(self.params.inputFieldSize, 10),
       'maxlength': self.maxTextLength,
-      'placeholder': self.params.placeholderText,
+      'placeholder': this.htmlDecode(self.params.placeholderText),
       'tabindex': '0',
       'aria-required': this.params.requiredField,
       'aria-labelledby': ariaId
@@ -202,6 +202,19 @@ H5P.TextInputField = (function ($) {
       statement: xApiEvent.data.statement
     };
   };
+
+  /**
+   * Retrieve true string from HTML encoded string.
+   * @param {string} input Input string.
+   * @return {string} Output string.
+   */
+  TextInputField.prototype.htmlDecode = function (input) {
+    const dparser = new DOMParser().parseFromString(input, 'text/html');
+    const div = document.createElement('div');
+    div.innerHTML = dparser.documentElement.textContent;
+
+    return div.textContent || div.innerText || '';
+  }
 
   return TextInputField;
 }(H5P.jQuery));
