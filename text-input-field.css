@@ -36,6 +36,6 @@
 
 .h5p-text-input-field-label.required:after {
   font-size: 1.1em;
-  content: '*';
+  content: "*";
   color: #da0001;
 }
