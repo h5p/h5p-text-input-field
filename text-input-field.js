@@ -13,6 +13,7 @@ H5P.TextInputField = (function ($) {
   var CHAR_MESSAGE = 'h5p-text-input-field-message-char';
 
   var ariaId = 0;
+  var charsThresholdLimit = 75;
 
   /**
    * Initialize module.
@@ -81,6 +82,9 @@ H5P.TextInputField = (function ($) {
       if (self.params.maximumLength !== undefined) {
         self.$charMessage.html(self.params.remainingChars.replace(/@chars/g, self.computeRemainingChars()));
       }
+
+      // Update screen reader users that character threshold limit has reached.
+      self.updateCharsThresholdReached();
     });
 
     this.$inputField.blur(function () {
@@ -178,6 +182,19 @@ H5P.TextInputField = (function ($) {
    */
   TextInputField.prototype.computeRemainingChars = function () {
     return this.maxTextLength - this.$inputField.val().length;
+  };
+
+  /**
+   * Compute chars threshold limit and update screen reader users about the limit
+   */
+   TextInputField.prototype.updateCharsThresholdReached = function () {
+    const self = this;
+    const numChars = self.$inputField.val().length;
+    const percentage = (100 * numChars) / self.maxTextLength;
+    self.$charMessage.removeAttr("aria-live");
+    if (percentage >= charsThresholdLimit) {
+      self.$charMessage.attr("aria-live", "polite");
+    }
   };
 
   /**
