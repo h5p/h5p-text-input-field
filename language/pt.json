@@ -5,7 +5,7 @@
       "description": "Descrição do que o utilizador deve inserir."
     },
     {
-      "label": "Placeholder text",
+      "label": "Texto marcador de posição",
       "description": "Um texto de espaço reservado para o utilizador."
     },
     {
