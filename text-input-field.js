@@ -158,7 +158,7 @@ H5P.TextInputField = (function ($) {
       return;
     }
     if (typeof previousState === 'object' && !Array.isArray(previousState)) {
-      self.$inputField.html(previousState.inputField || '');
+      self.$inputField.text(previousState.inputField || '');
     }
   };
 
