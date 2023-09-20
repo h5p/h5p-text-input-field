@@ -233,5 +233,9 @@ H5P.TextInputField = (function ($) {
     return div.textContent || div.innerText || '';
   }
 
+  TextInputField.prototype.resetTask = function () {
+    this.setState({ inputField: '' });
+  };
+
   return TextInputField;
 }(H5P.jQuery));
