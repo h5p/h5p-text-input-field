@@ -30,7 +30,7 @@
   float: left;
 }
 
-.h5p-text-input-field-label.required p:last-child:after {
+.h5p-text-input-field-label.required > :last-child:after {
   font-size: 1.1em;
   content: "*";
   color: #da0001;
