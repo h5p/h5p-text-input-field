@@ -240,6 +240,7 @@ H5P.TextInputField = (function ($) {
     newString = newString.replace(/<\/td>/g, '\t');
     newString = newString.replace(/<\/table>/g, '\n');
     newString = newString.replace(/<\/tr>/g, '\n');
+    newString = newString.replace(/<\/p><p>/g, '\n\n');
     newString = newString.replace(/<\/p>/g, '\n\n');
     newString = newString.replace(/<p>/g, '\n');
     newString = newString.replace(/<\/div>/g, '\n');
