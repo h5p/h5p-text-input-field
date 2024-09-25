@@ -118,20 +118,10 @@ H5P.TextInputField = (function ($) {
    */
   TextInputField.prototype.getInput = function () {
     // Strip away HTML from description:
-    var descriptionDoc = new DOMParser().parseFromString(this.params.taskDescription, 'text/html');
-    var description = (descriptionDoc.body && descriptionDoc.body.textContent) ? descriptionDoc.body.textContent : '';
-
-    // Remove trailing newlines
-    var cleanedTaskDescription = description
-      .replace(/^\s+|\s+$/g, '')
-      .replace(/(<p>|<\/p>)/img, "");
-
-    // Escape html
-    var descriptionElement = document.createElement('div');
-    descriptionElement.textContent = cleanedTaskDescription;
+    const cleanedTaskDescription = htmlToText(this.params.taskDescription);
 
     return {
-      description: descriptionElement.innerHTML,
+      description: cleanedTaskDescription,
       value: this.$inputField.val()
     };
   };
@@ -236,6 +226,38 @@ H5P.TextInputField = (function ($) {
   TextInputField.prototype.resetTask = function () {
     this.setState({ inputField: '' });
   };
+
+  /**
+   * Strips a string of html tags, but keeps the expected whitespace etc.
+   * 
+   * @param {String} html String with html tags
+   * @returns {String} string without html tags
+   */
+  function htmlToText(html){
+    let newString = html;
+
+    //keep html brakes and tabs
+    newString = newString.replace(/<\/td>/g, '\t');
+    newString = newString.replace(/<\/table>/g, '\n');
+    newString = newString.replace(/<\/tr>/g, '\n');
+    newString = newString.replace(/<\/p><p>/g, '\n\n');
+    newString = newString.replace(/<\/p>/g, '\n\n');
+    newString = newString.replace(/<p>/g, '\n');
+    newString = newString.replace(/<\/div>/g, '\n');
+    newString = newString.replace(/<\/h.?>/g, '\n\n');
+    newString = newString.replace(/<ol>|<ul>/g, '\n');
+    newString = newString.replace(/<\/li>/g, '\n');
+    newString = newString.replace(/<br>/g, '\n');
+    newString = newString.replace(/<br( )*\/>/g, '\n');
+
+    //parse html into text
+    var dom = (new DOMParser()).parseFromString('<!doctype html><body>' + newString, 'text/html');
+
+    // Strip leading and trailing newlines
+    newString = dom.body.textContent.replace(/^\s*|\s*$/g, '');
+
+    return newString;
+  }
 
   return TextInputField;
 }(H5P.jQuery));
