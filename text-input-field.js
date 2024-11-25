@@ -6,7 +6,7 @@ var H5P = H5P || {};
  */
 H5P.TextInputField = (function ($) {
   // CSS Classes:
-  var MAIN_CONTAINER = 'h5p-text-input-field';
+  var MAIN_CONTAINER = 'h5p-text-input-field h5p-theme';
   var INPUT_LABEL = 'h5p-text-input-field-label';
   var INPUT_FIELD = 'h5p-text-input-field-textfield';
   var WRAPPER_MESSAGE = 'h5p-text-input-field-message-wrapper';
