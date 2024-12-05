@@ -3,21 +3,19 @@
   resize: none;
   font-size: 16px;
   font-family: var(--h5p-theme-font-name);
-  
-  
-    display: flex;
-    align-items: center;
-    background-color: var(--h5p-theme-ui-base);
-    box-shadow: inset 0px 0px 4px 4px rgba(117, 128, 147, 0.10);
-    border-radius: var(--h5p-theme-border-radius-medium);
-    border: 2px solid var(--h5p-theme-stroke-1);
-    padding: var(--h5p-theme-spacing-xs) var(--h5p-theme-spacing-xs);
-    color: var(--h5p-theme-text-primary);
+  display: flex;
+  align-items: center;
+  background-color: var(--h5p-theme-ui-base);
+  box-shadow: inset 0px 0px 4px 4px rgba(117, 128, 147, 0.10);
+  border-radius: var(--h5p-theme-border-radius-medium);
+  border: 2px solid var(--h5p-theme-stroke-1);
+  padding: var(--h5p-theme-spacing-xs) var(--h5p-theme-spacing-xs);
+  color: var(--h5p-theme-text-primary);
   
 }
 
 .h5p-text-input-field .h5p-text-input-field-textfield:focus {
-  background-color: #fff;
+  background-color: var(--h5p-theme-ui-base);
 }
 
 /* Reduce bottom and top margin of children */
