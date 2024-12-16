@@ -1,5 +1,5 @@
 .h5p-text-input-field .h5p-text-input-field-textfield {
-  width: calc(100% - 0.8em);
+  width: 100%;
   resize: none;
   font-size: 16px;
   font-family: var(--h5p-theme-font-name);
@@ -11,11 +11,14 @@
   border: 2px solid var(--h5p-theme-stroke-1);
   padding: var(--h5p-theme-spacing-xs) var(--h5p-theme-spacing-xs);
   color: var(--h5p-theme-text-primary);
-  
+  box-sizing: border-box;
 }
 
 .h5p-text-input-field .h5p-text-input-field-textfield:focus {
   background-color: var(--h5p-theme-ui-base);
+  z-index: 3000;
+  outline: 2px ridge var(--h5p-theme-main-cta-base);
+  outline-offset: 2px;
 }
 
 /* Reduce bottom and top margin of children */
