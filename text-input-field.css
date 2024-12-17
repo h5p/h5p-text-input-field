@@ -1,7 +1,7 @@
 .h5p-text-input-field .h5p-text-input-field-textfield {
   width: 100%;
   resize: none;
-  font-size: 16px;
+  font-size: var(--h5p-theme-font-size-m);
   font-family: var(--h5p-theme-font-name);
   display: flex;
   align-items: center;
@@ -23,8 +23,9 @@
 
 /* Reduce bottom and top margin of children */
 .h5p-text-input-field .h5p-text-input-field-label > * {
-  margin-top: 0.2em;
-  margin-bottom: 0.2em;
+  margin-top: calc(var(--h5p-theme-spacing-s)*0.2);
+  margin-bottom: calc(var(--h5p-theme-spacing-s)*0.2);
+  font-weight: 600;
 }
 
 .h5p-text-input-field .h5p-text-input-field-textfield.required-input {
@@ -36,12 +37,12 @@
 }
 
 .h5p-text-input-field .h5p-text-input-field-message-char {
-  font-size: 0.8em;
+  font-size: calc(var(--h5p-theme-font-size-m)*0.8;
   float: left;
 }
 
 .h5p-text-input-field-label.required > :last-child:after {
-  font-size: 1.1em;
+  font-size: var(--h5p-theme-font-size-m);
   content: "*";
   color: var(--h5p-theme-feedback-incorrect-main);
   padding-left: 4px;
