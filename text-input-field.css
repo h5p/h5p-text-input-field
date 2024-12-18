@@ -34,6 +34,7 @@
 
 .h5p-text-input-field .h5p-text-input-field-message-wrapper {
   overflow:auto;
+  margin-top: var(--h5p-theme-spacing-xxs);
 }
 
 .h5p-text-input-field .h5p-text-input-field-message-char {
