@@ -17,24 +17,24 @@
       "description": "Cocher pour indiquer que ce champ est requis. L'utilisateur doit compléter tous les champs requis pour être en mesure d'exporter le document.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 ligne"
         },
         {
-          "label": "3 lines"
+          "label": "3 lignes"
         },
         {
-          "label": "10 lines"
+          "label": "10 lignes"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Champ requis",
+      "description": "Cochez pour rendre ce champ requis, l'utilisateur doit répondre à tous les champs requis pour pouvoir exporter un document."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Caractères restants",
+      "default": "Caractères restants: @chars",
+      "description": "Message pour les caractères restants. Vous pouvez utiliser @chars qui sera remplacé par le nombre correspondant."
     }
   ]
 }
