@@ -1,20 +1,20 @@
 {
   "semantics": [
     {
-      "label": "Beskrivelse av inntastingsfelt",
-      "description": "En beskrivelse av hva brukeren skal fylle inn."
+      "label": "Beskriving av inntastingsfelt",
+      "description": "Ei beskriving av kva brukaren skal fylle inn."
     },
     {
-      "label": "Valgfri fylltekst ved tomt tekstfelt",
-      "description": "Her kan du oppgi en fylltekst som skal vises når inntastingsfeltet er tomt."
+      "label": "Valfri fylltekst ved tomt tekstfelt",
+      "description": "Her kan du oppgi ein fylltekst som skal visast når inntastingsfeltet er tomt."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Maksimal tekstlengde",
+      "description": "Maksimalt antal teikn i teksten."
     },
     {
-      "label": "Størrelse på inntastingsfelt",
-      "description": "Størrelse på inntastingsfelt oppgitt i antall linjer inntastingsfeltet vil romme.",
+      "label": "Storleik på inntastingsfelt",
+      "description": "Storleiken på inntastingsfeltet, oppgitt i antal linjer.",
       "options": [
         {
           "label": "1 linje"
@@ -29,12 +29,12 @@
     },
     {
       "label": "Obligatorisk felt",
-      "description": "Skru på for å gjøre dette inntastingsfeltet obligatorisk. Det vil føre til at man ikke kan eksportere et dokument før dette inntastingsfeltet er fylt ut."
+      "description": "Skru på for å gjere dette inntastingsfeltet obligatorisk. Brukar kan ikkje eksportere eit dokument før alle dei obligatoriske inntastingsfelta er fylte ut."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Gjenståande teikn",
+      "default": "Teikn igjen: @chars",
+      "description": "Melding om kor mange teikn brukar har igjen. Du kan bruke variabelen @chars, som blir erstatta av det aktuelle talet."
     }
   ]
 }
