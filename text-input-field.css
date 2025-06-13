@@ -1,38 +1,50 @@
 .h5p-text-input-field .h5p-text-input-field-textfield {
-  padding: 0.25em 0.4em;
-  width: calc(100% - 0.8em);
+  width: 100%;
   resize: none;
-  border: 1px solid #C7C7C7;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
+  font-size: var(--h5p-theme-font-size-m);
+  font-family: var(--h5p-theme-font-name);
+  display: flex;
+  align-items: center;
+  background-color: var(--h5p-theme-ui-base);
+  box-shadow: inset 0px 0px 4px 4px rgba(117, 128, 147, 0.10);
+  border-radius: var(--h5p-theme-border-radius-medium);
+  border: 2px solid var(--h5p-theme-stroke-1);
+  padding: var(--h5p-theme-spacing-xs) var(--h5p-theme-spacing-xs);
+  color: var(--h5p-theme-text-primary);
+  box-sizing: border-box;
 }
 
 .h5p-text-input-field .h5p-text-input-field-textfield:focus {
-  background-color: #fff;
+  background-color: var(--h5p-theme-ui-base);
+  z-index: 3000;
+  outline: 2px ridge var(--h5p-theme-main-cta-base);
+  outline-offset: 2px;
 }
 
 /* Reduce bottom and top margin of children */
 .h5p-text-input-field .h5p-text-input-field-label > * {
-  margin-top: 0.2em;
-  margin-bottom: 0.2em;
+  margin-top: calc(var(--h5p-theme-spacing-s)*0.2);
+  margin-bottom: calc(var(--h5p-theme-spacing-s)*0.2);
+  font-weight: 600;
 }
 
 .h5p-text-input-field .h5p-text-input-field-textfield.required-input {
-  border-color: red;
+  border-color: var(--h5p-theme-feedback-incorrect-main);
 }
 
 .h5p-text-input-field .h5p-text-input-field-message-wrapper {
   overflow:auto;
+  margin-top: var(--h5p-theme-spacing-xxs);
 }
 
 .h5p-text-input-field .h5p-text-input-field-message-char {
-  font-size: 0.8em;
+  font-size: calc(var(--h5p-theme-font-size-m)*0.8;
   float: left;
 }
 
 .h5p-text-input-field-label.required > :last-child:after {
-  font-size: 1.1em;
+  font-size: var(--h5p-theme-font-size-m);
   content: "*";
-  color: #da0001;
+  color: var(--h5p-theme-feedback-incorrect-main);
   padding-left: 4px;
 }
