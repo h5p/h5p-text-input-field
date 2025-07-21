@@ -2,19 +2,19 @@
   "semantics": [
     {
       "label": "Beskrivelse av inntastingsfelt",
-      "description": "En beskrivelse av hva brukeren skal fylle inn."
+      "description": "En beskrivelse av hva bruker skal fylle inn."
     },
     {
       "label": "Valgfri fylltekst ved tomt tekstfelt",
       "description": "Her kan du oppgi en fylltekst som skal vises når inntastingsfeltet er tomt."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Maksimal tekstlengde",
+      "description": "Maksimalt antall tegn i teksten"
     },
     {
       "label": "Størrelse på inntastingsfelt",
-      "description": "Størrelse på inntastingsfelt oppgitt i antall linjer inntastingsfeltet vil romme.",
+      "description": "Størrelse på inntastingsfelt, oppgitt i antall linjer.",
       "options": [
         {
           "label": "1 linje"
@@ -29,12 +29,12 @@
     },
     {
       "label": "Obligatorisk felt",
-      "description": "Skru på for å gjøre dette inntastingsfeltet obligatorisk. Det vil føre til at man ikke kan eksportere et dokument før dette inntastingsfeltet er fylt ut."
+      "description": "Skru på for å gjøre dette inntastingsfeltet obligatorisk. Bruker kan ikke eksportere et dokument før alle obligatoriske inntastingsfelt er fylt ut."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Gjenstående tegn",
+      "default": "Tegn igjen: @chars",
+      "description": "Melding om hvor mange tall bruker har igjen. Du kan bruke variabelen @chars, som vil bli erstatta med det aktuelle tallet."
     }
   ]
 }
