@@ -1,40 +1,40 @@
 {
   "semantics": [
     {
-      "label": "Description of inputfield",
-      "description": "Description of what the user should input."
+      "label": "Descrierea câmpului de intrare",
+      "description": "Descrierea a ceea ce utilizatorul ar trebui să introducă."
     },
     {
-      "label": "Placeholder text",
-      "description": "A placeholder text for the user."
+      "label": "Text substituent",
+      "description": "Un text substituent pentru utilizator."
     },
     {
-      "label": "Maximum text length",
-      "description": "Maximum number of characters for the text."
+      "label": "Lungimea maximă a textului",
+      "description": "Numărul maxim de caractere pentru text."
     },
     {
-      "label": "Input field size",
-      "description": "The size of the input field in amount of lines it will cover.",
+      "label": "Dimensiunea câmpului de intrare",
+      "description": "Dimensiunea câmpului de intrare în număr de rânduri pe care le va acoperi.",
       "options": [
         {
-          "label": "1 line"
+          "label": "1 rând"
         },
         {
-          "label": "3 lines"
+          "label": "3 rânduri"
         },
         {
-          "label": "10 lines"
+          "label": "10 rânduri"
         }
       ]
     },
     {
-      "label": "Required field",
-      "description": "Check to make this field required, the user must answer all required fields to be able to export a document."
+      "label": "Câmp obligatoriu",
+      "description": "Bifați pentru a face acest câmp obligatoriu, utilizatorul trebuie să răspundă la toate câmpurile obligatorii pentru a putea exporta un document."
     },
     {
-      "label": "Remaining characters",
-      "default": "Remaining characters: @chars",
-      "description": "Message for remaining characters. You can use @chars which will be replaced by the corresponding number."
+      "label": "Caractere rămase",
+      "default": "Caractere rămase: @chars",
+      "description": "Mesaj pentru caracterele rămase. Puteți folosi @chars, care va fi înlocuit cu numărul corespunzător."
     }
   ]
 }
