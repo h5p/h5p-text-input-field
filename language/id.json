@@ -1,0 +1,40 @@
+{
+  "semantics": [
+    {
+      "label": "Deskripsi kolom masukan",
+      "description": "Deskripsi tentang apa yang harus dimasukkan pengguna."
+    },
+    {
+      "label": "Teks pengganti",
+      "description": "Teks pengganti untuk pengguna."
+    },
+    {
+      "label": "Panjang teks maksimum",
+      "description": "Jumlah maksimum karakter untuk teks."
+    },
+    {
+      "label": "Ukuran kolom masukan",
+      "description": "Ukuran kolom masukan dalam jumlah baris yang akan dicakupnya.",
+      "options": [
+        {
+          "label": "1 baris"
+        },
+        {
+          "label": "3 baris"
+        },
+        {
+          "label": "10 baris"
+        }
+      ]
+    },
+    {
+      "label": "Kolom diperlukan",
+      "description": "Centang untuk membuat kolom ini diperlukan, pengguna harus menjawab semua kolom diperlukan untuk dapat mengekspor dokumen."
+    },
+    {
+      "label": "Sisa karakter",
+      "default": "Sisa karakter: @chars",
+      "description": "Pesan untuk sisa karakter. Anda dapat menggunakan @chars yang akan diganti dengan angka yang sesuai."
+    }
+  ]
+}
